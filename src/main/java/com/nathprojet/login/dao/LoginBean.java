@@ -1,5 +1,7 @@
 package com.nathprojet.login.dao;
 
+import com.nathprojet.role.dao.RoleBean;
+
 import javax.persistence.*;
 
 /**
@@ -16,7 +18,7 @@ public class LoginBean {
 
   String mdp;
 
-  Integer role;
+  RoleBean role;
 
   public Integer getId() {
     return id;
@@ -42,11 +44,11 @@ public class LoginBean {
     this.mdp = mdp;
   }
 
-  public Integer getRole() {
+  public RoleBean getRole() {
     return role;
   }
 
-  public void setRole(Integer role) {
+  public void setRole(RoleBean role) {
     this.role = role;
   }
 }
