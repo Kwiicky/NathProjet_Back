@@ -27,6 +27,7 @@ public class CommandeBean {
 
   Integer statusSuivi;
 
+  @OneToOne
   ClientBean client;
 
   public Integer getId() {

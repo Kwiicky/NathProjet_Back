@@ -18,6 +18,7 @@ public class LoginBean {
 
   String mdp;
 
+  @OneToOne
   RoleBean role;
 
   public Integer getId() {

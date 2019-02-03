@@ -15,8 +15,10 @@ public class PanierBean {
   @GeneratedValue(strategy= GenerationType.AUTO)
   Integer id;
 
+  @OneToOne
   ArticleBean articleBean;
 
+  @OneToOne
   CommandeBean commandeBean;
 
   public Integer getId() {

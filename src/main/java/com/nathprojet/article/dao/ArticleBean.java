@@ -21,6 +21,7 @@ public class ArticleBean {
 
   Float prix;
 
+  @OneToOne
   AgeBean age;
 
   String reference;

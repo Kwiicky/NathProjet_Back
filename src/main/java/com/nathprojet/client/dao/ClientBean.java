@@ -23,10 +23,13 @@ public class ClientBean {
 
   String adresse;
 
+  @OneToOne
   CodePostalBean cp;
 
+  @OneToOne
   VilleBean ville;
 
+  @OneToOne
   PaysBean pays;
 
   @Column(length = 10)
