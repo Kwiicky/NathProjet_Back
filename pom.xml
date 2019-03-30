@@ -31,13 +31,6 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>2.6.0</version>
-		</dependency>
-
-
 		<!-- Use MySQL Connector-J -->
 
 		<dependency>
@@ -50,6 +43,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -59,6 +53,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+
 	</build>
 
 </project>

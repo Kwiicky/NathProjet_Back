@@ -1,6 +1,7 @@
 package com.nathprojet.article.dao;
 
-import com.nathprojet.age.dao.AgeBean;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.nathprojet.photo.dao.PhotoBean;
 
 import javax.persistence.*;
 
@@ -17,18 +18,24 @@ public class ArticleBean {
 
   String titre;
 
-  Integer categorie;
+  String categorie;
 
   Float prix;
 
-  @OneToOne
-  AgeBean age;
+  String age;
 
   String reference;
 
-  Integer photo;
+  @ManyToOne
+  @JoinColumn
+  @JsonIgnore
+  PhotoBean photo;
 
-  Integer marque;
+  String marque;
+
+  String qualite;
+
+  String description;
 
   public Integer getId() {
     return id;
@@ -46,11 +53,11 @@ public class ArticleBean {
     this.titre = titre;
   }
 
-  public Integer getCategorie() {
+  public String getCategorie() {
     return categorie;
   }
 
-  public void setCategorie(Integer categorie) {
+  public void setCategorie(String categorie) {
     this.categorie = categorie;
   }
 
@@ -62,11 +69,11 @@ public class ArticleBean {
     this.prix = prix;
   }
 
-  public AgeBean getAge() {
+  public String getAge() {
     return age;
   }
 
-  public void setAge(AgeBean age) {
+  public void setAge(String age) {
     this.age = age;
   }
 
@@ -78,19 +85,35 @@ public class ArticleBean {
     this.reference = reference;
   }
 
-  public Integer getPhoto() {
+  public PhotoBean getPhoto() {
     return photo;
   }
 
-  public void setPhoto(Integer photo) {
+  public void setPhoto(PhotoBean photo) {
     this.photo = photo;
   }
 
-  public Integer getMarque() {
+  public String getMarque() {
     return marque;
   }
 
-  public void setMarque(Integer marque) {
+  public void setMarque(String marque) {
     this.marque = marque;
+  }
+
+  public String getQualite() {
+    return qualite;
+  }
+
+  public void setQualite(String qualite) {
+    this.qualite = qualite;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 }
