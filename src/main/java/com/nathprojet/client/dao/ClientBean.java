@@ -1,8 +1,6 @@
 package com.nathprojet.client.dao;
 
-import com.nathprojet.codePostal.dao.CodePostalBean;
-import com.nathprojet.pays.dao.PaysBean;
-import com.nathprojet.ville.dao.VilleBean;
+import com.nathprojet.adresse.dao.AdresseBean;
 
 import javax.persistence.*;
 
@@ -21,16 +19,8 @@ public class ClientBean {
 
   String prenom;
 
-  String adresse;
-
-  @OneToOne
-  CodePostalBean cp;
-
-  @OneToOne
-  VilleBean ville;
-
-  @OneToOne
-  PaysBean pays;
+  @ManyToOne
+  AdresseBean adresse ;
 
   @Column(length = 10)
   String telephone;
@@ -61,36 +51,12 @@ public class ClientBean {
     this.prenom = prenom;
   }
 
-  public String getAdresse() {
+  public AdresseBean getAdresse() {
     return adresse;
   }
 
-  public void setAdresse(String adresse) {
+  public void setAdresse(AdresseBean adresse) {
     this.adresse = adresse;
-  }
-
-  public CodePostalBean getCp() {
-    return cp;
-  }
-
-  public void setCp(CodePostalBean cp) {
-    this.cp = cp;
-  }
-
-  public VilleBean getVille() {
-    return ville;
-  }
-
-  public void setVille(VilleBean ville) {
-    this.ville = ville;
-  }
-
-  public PaysBean getPays() {
-    return pays;
-  }
-
-  public void setPays(PaysBean pays) {
-    this.pays = pays;
   }
 
   public String getTelephone() {
