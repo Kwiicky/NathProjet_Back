@@ -9,9 +9,9 @@ import javax.transaction.Transactional;
 /**
  * Created by FP13694 on 20/01/2019.
  */
-@Controller    // This means that this class is a Controller
+@RestController    // This means that this class is a Controller
 @RequestMapping(path="/api/client")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ClientController {
     private ClientService clientService;
 

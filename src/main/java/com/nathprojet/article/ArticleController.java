@@ -12,9 +12,9 @@ import java.util.List;
 /**
  * Created by FP13694 on 20/01/2019.
  */
-@Controller    // This means that this class is a Controller
+@RestController    // This means that this class is a Controller
 @RequestMapping(path="/api/article")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class ArticleController {
 
   private ArticleService articleService;

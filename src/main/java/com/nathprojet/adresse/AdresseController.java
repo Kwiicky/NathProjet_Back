@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.beans.Transient;
 
-@Controller
+@RestController    // This means that this class is a Controller
 @RequestMapping(path ="/api/adresse")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class AdresseController {
 
     private AdresseService adresseService;

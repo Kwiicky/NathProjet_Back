@@ -1,5 +1,7 @@
 package com.nathprojet.panier;
 
+import com.nathprojet.panier.dao.PanierBean;
+import com.nathprojet.panier.dao.PanierRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,4 +9,18 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PanierService {
+
+    private PanierRepository panierRepository;
+
+    public PanierService(PanierRepository panierRepository){this.panierRepository = panierRepository; }
+
+    public Iterable<PanierBean> getAll(){
+        return panierRepository.findAll();
+    }
+
+    public void delete(PanierBean panierBean) {
+        panierRepository.delete(panierBean);
+    }
+
+
 }
