@@ -6,15 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 
 /**
  * Created by FP13694 on 20/01/2019.
  */
-@Controller    // This means that this class is a Controller
-@RequestMapping(path="/api/article")
-@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping("/api/article")
 public class ArticleController {
 
   private ArticleService articleService;

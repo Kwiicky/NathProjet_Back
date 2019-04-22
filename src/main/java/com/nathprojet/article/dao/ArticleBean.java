@@ -31,6 +31,11 @@ public class ArticleBean {
   @JsonIgnore
   PhotoBean photo;
 
+  @ManyToOne
+  @JoinColumn
+  @JsonIgnore
+  PhotoBean photo2;
+
   String marque;
 
   String qualite;
@@ -91,6 +96,14 @@ public class ArticleBean {
 
   public void setPhoto(PhotoBean photo) {
     this.photo = photo;
+  }
+
+  public PhotoBean getPhoto2() {
+    return photo2;
+  }
+
+  public void setPhoto2(PhotoBean photo2) {
+    this.photo2 = photo2;
   }
 
   public String getMarque() {
