@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.beans.Transient;
+import java.util.Optional;
 
 @RestController    // This means that this class is a Controller
 @RequestMapping(path ="/api/adresse")
@@ -29,4 +30,8 @@ public class AdresseController {
     public Iterable<AdresseBean> getAll(){
         return adresseService.getAll();
     }
+
+    @GetMapping("/{id}")
+    public Optional<AdresseBean> getById(@PathVariable("id") Integer id) {return adresseService.getById(id);}
+
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 
 /**
@@ -33,5 +34,8 @@ public class ArticleController {
   public Iterable<ArticleBean> getAll() {
     return articleService.findAll();
   }
+
+  @GetMapping("/{id}")
+  public Optional<ArticleBean> getById(@PathVariable("id") Integer id) {return articleService.getById(id);}
 
 }

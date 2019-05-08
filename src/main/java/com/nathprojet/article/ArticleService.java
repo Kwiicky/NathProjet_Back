@@ -4,6 +4,8 @@ import com.nathprojet.article.dao.ArticleBean;
 import com.nathprojet.article.dao.ArticleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * Created by FP13694 on 20/01/2019.
  */
@@ -25,4 +27,8 @@ public class ArticleService {
     return this.articleRepository.findAll();
   }
 
+  public Optional<ArticleBean> getById(Integer articleBean) {
+    return articleRepository.findById(articleBean);
+
+  }
 }
