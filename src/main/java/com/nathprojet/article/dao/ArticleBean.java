@@ -26,6 +26,8 @@ public class ArticleBean {
 
   String reference;
 
+  String genre;
+
   @ManyToOne
   @JoinColumn
   @JsonIgnore
@@ -128,5 +130,13 @@ public class ArticleBean {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public String getGenre() {
+    return genre;
+  }
+
+  public void setGenre(String genre) {
+    this.genre = genre;
   }
 }
