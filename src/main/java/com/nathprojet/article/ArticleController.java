@@ -1,6 +1,7 @@
 package com.nathprojet.article;
 
 import com.nathprojet.article.dao.ArticleBean;
+import com.nathprojet.article.dao.ArticleSearchBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -37,5 +38,11 @@ public class ArticleController {
 
   @GetMapping("/{id}")
   public Optional<ArticleBean> getById(@PathVariable("id") Integer id) {return articleService.getById(id);}
+
+  @GetMapping("/search/{param}")
+  @ResponseBody
+  public Iterable<ArticleBean> getArticlesSearch(@PathVariable("param") String param) {
+    return articleService.findArticlesSearch(param);
+  }
 
 }

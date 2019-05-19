@@ -1,5 +1,6 @@
 package com.nathprojet.panier.dao;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.nathprojet.article.dao.ArticleBean;
 import com.nathprojet.commande.dao.CommandeBean;
@@ -19,8 +20,8 @@ public class PanierBean {
   String id;
 
   @Transient
-  @JsonSerialize
-  List<ArticleBean> listeArticle = new ArrayList<>();
+  @JsonProperty("listeArticle")
+  List<ArticleBean> listeArticle;
 
   @OneToOne
   CommandeBean commandeBean;

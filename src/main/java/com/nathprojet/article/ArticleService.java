@@ -2,6 +2,7 @@ package com.nathprojet.article;
 
 import com.nathprojet.article.dao.ArticleBean;
 import com.nathprojet.article.dao.ArticleRepository;
+import com.nathprojet.article.dao.ArticleSearchBean;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -25,6 +26,10 @@ public class ArticleService {
 
   public Iterable<ArticleBean> findAll(){
     return this.articleRepository.findAll();
+  }
+
+  public Iterable<ArticleBean> findArticlesSearch(String param){
+    return this.articleRepository.findByMarqueContainingOrCategorieContainingOrAgeContainingOrQualiteContainingOrTitreContaining(param,param,param,param,param);
   }
 
   public Optional<ArticleBean> getById(Integer articleBean) {

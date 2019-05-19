@@ -1,6 +1,7 @@
 package com.nathprojet.panier;
 
 import com.nathprojet.panier.dao.PanierBean;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -33,10 +34,11 @@ public class PanierController {
     }
 
     @Transactional
-    @PostMapping()
+    @PostMapping
     @ResponseBody
     public PanierBean create(@RequestBody PanierBean article){
-        return panierService.create(article);
+        panierService.create(article);
+        return null;
     }
 
     @Transactional
