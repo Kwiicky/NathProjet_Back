@@ -1,5 +1,7 @@
 package com.nathprojet.commande;
 
+import com.nathprojet.commande.dao.CommandeBean;
+import com.nathprojet.commande.dao.CommandeRepository;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,4 +9,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CommandeService {
+
+    private CommandeRepository commandeRepository;
+
+    public CommandeService(CommandeRepository commandeRepository) {
+        this.commandeRepository = commandeRepository;
+    }
+
+    public Iterable<CommandeBean> findAll(){ return this.commandeRepository.findAll();
+  }
 }

@@ -25,7 +25,11 @@ public class CommandeBean {
 
   Boolean statusValid;
 
-  Integer statusSuivi;
+  String statusSuivi;
+
+  String numeroSuivi;
+
+  Integer total;
 
   @OneToOne
   ClientBean client;
@@ -70,11 +74,11 @@ public class CommandeBean {
     this.statusValid = statusValid;
   }
 
-  public Integer getStatusSuivi() {
+  public String getStatusSuivi() {
     return statusSuivi;
   }
 
-  public void setStatusSuivi(Integer statusSuivi) {
+  public void setStatusSuivi(String statusSuivi) {
     this.statusSuivi = statusSuivi;
   }
 
@@ -84,5 +88,21 @@ public class CommandeBean {
 
   public void setClient(ClientBean client) {
     this.client = client;
+  }
+
+  public String getNumeroSuivi() {
+    return numeroSuivi;
+  }
+
+  public void setNumeroSuivi(String numeroSuivi) {
+    this.numeroSuivi = numeroSuivi;
+  }
+
+  public Integer getTotal() {
+    return total;
+  }
+
+  public void setTotal(Integer total) {
+    this.total = total;
   }
 }

@@ -4,6 +4,8 @@ import com.nathprojet.adresse.dao.AdresseBean;
 import com.nathprojet.adresse.dao.AdresseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AdresseService {
 
@@ -17,5 +19,10 @@ public class AdresseService {
 
     public Iterable<AdresseBean> getAll(){
         return adresseRepository.findAll();
+    }
+
+    public Optional<AdresseBean> getById(Integer articleBean) {
+        return adresseRepository.findById(articleBean);
+
     }
 }

@@ -4,6 +4,8 @@ import com.nathprojet.client.dao.ClientBean;
 import com.nathprojet.client.dao.ClientRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 /**
  * Created by FP13694 on 20/01/2019.
  */
@@ -19,5 +21,10 @@ public class ClientService {
 
     public Iterable<ClientBean> getAll(){
         return clientRepository.findAll();
+    }
+
+    public Optional<ClientBean> getById(Integer articleBean) {
+        return clientRepository.findById(articleBean);
+
     }
 }
